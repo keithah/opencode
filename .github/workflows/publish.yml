@@ -30,7 +30,7 @@ permissions:
 
 jobs:
   publish:
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubicloud-standard-4-ubuntu-2404
     if: github.repository == 'anomalyco/opencode'
     steps:
       - uses: actions/checkout@v3
@@ -210,7 +210,7 @@ jobs:
       - publish
       - publish-tauri
     if: needs.publish.outputs.tag
-    runs-on: blacksmith-4vcpu-ubuntu-2404
+    runs-on: ubicloud-standard-4-ubuntu-2404
     steps:
       - uses: actions/checkout@v3
         with:
