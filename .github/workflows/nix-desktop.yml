@@ -26,7 +26,7 @@ jobs:
         os:
           - blacksmith-4vcpu-ubuntu-2404
           - macos-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os == 'blacksmith-4vcpu-ubuntu-2404' && 'ubicloud-standard-4-ubuntu-2404' || matrix.os == 'macos-latest' && 'tenki-macos-26-small' || matrix.os }}
     timeout-minutes: 60
     steps:
       - name: Checkout repository
